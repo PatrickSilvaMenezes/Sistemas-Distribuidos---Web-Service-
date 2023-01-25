@@ -1,19 +1,11 @@
-# Sistemas-Distribuidos---Web-Services
+# Sistemas-Distribuídos---Web-Services
 
 
-### INSTITUTO POLITÉCNICO DE BRAGANÇA - CAMPUS
+## INSTITUTO POLITÉCNICO DE BRAGANÇA - CAMPUS MIRANDELA
 
-### MIRANDELA
+#### Desenvolvido por: PATRICK SILVA MENEZES
 
-### LICENCIATURA EM INFORMÁTICA E COMUNICAÇÕES
-
-### TRABALHO DE SISTEMAS DISTRIBUÍDOS
-
-### WEB SERVICES
-
-### PATRICK SILVA MENEZES
-
-
+###### ========Ainda falta por as imagens===========
 # INTRODUÇÃO
 
 O trabalho da disciplina de Sistemas Distribuídos sobre Web Services,
