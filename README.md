@@ -51,7 +51,7 @@ Getters respectivos a cada atributo.
 Classe na qual implementei os métodos solicitados, que serão
 explicados em seguida.
 ```
-## 2. WEB METHODS IMPLEMENTADOS NA CLASSE
+# 2. WEB METHODS IMPLEMENTADOS NA CLASSE
 
 ## WS_DB_GESTOR
 
