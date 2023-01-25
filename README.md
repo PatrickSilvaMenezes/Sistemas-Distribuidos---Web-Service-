@@ -212,9 +212,7 @@ definida na tabela aluguer e por fim é feito o commit.
 
 
 ## 2.9. MÉTODO DEVOLVE DISCO
-
-## 2.9.
-
+  
 Esse método permite devolver discos alugados da tabela aluguer da base de
 dados nostalgico, passando os WebParameters id_associado, id_disco,
 data_aluguer, data_devolucao, data_max_devolucao, fazendo a conexão
