@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://server/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://server/">
+
+<xs:element name="alugaDisco" type="tns:alugaDisco"/>
+
+<xs:element name="alugaDiscoResponse" type="tns:alugaDiscoResponse"/>
+
+<xs:element name="devolveDisco" type="tns:devolveDisco"/>
+
+<xs:element name="devolveDiscoResponse" type="tns:devolveDiscoResponse"/>
+
+<xs:element name="inserirAssociado" type="tns:inserirAssociado"/>
+
+<xs:element name="inserirAssociadoResponse" type="tns:inserirAssociadoResponse"/>
+
+<xs:element name="inserirDisco" type="tns:inserirDisco"/>
+
+<xs:element name="inserirDiscoResponse" type="tns:inserirDiscoResponse"/>
+
+<xs:element name="pesquisaDiscoEstiloMusica" type="tns:pesquisaDiscoEstiloMusica"/>
+
+<xs:element name="pesquisaDiscoEstiloMusicaResponse" type="tns:pesquisaDiscoEstiloMusicaResponse"/>
+
+<xs:element name="pesquisaDiscoGrupoMusico" type="tns:pesquisaDiscoGrupoMusico"/>
+
+<xs:element name="pesquisaDiscoGrupoMusicoResponse" type="tns:pesquisaDiscoGrupoMusicoResponse"/>
+
+<xs:element name="pesquisaDiscoTitulo" type="tns:pesquisaDiscoTitulo"/>
+
+<xs:element name="pesquisaDiscoTituloResponse" type="tns:pesquisaDiscoTituloResponse"/>
+
+<xs:element name="removerAssociado" type="tns:removerAssociado"/>
+
+<xs:element name="removerAssociadoResponse" type="tns:removerAssociadoResponse"/>
+
+<xs:element name="removerDisco" type="tns:removerDisco"/>
+
+<xs:element name="removerDiscoResponse" type="tns:removerDiscoResponse"/>
+
+<xs:complexType name="pesquisaDiscoEstiloMusica">
+<xs:sequence>
+<xs:element name="estilo_musica" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pesquisaDiscoEstiloMusicaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:disco" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="disco">
+<xs:sequence>
+<xs:element name="ano" type="xs:int"/>
+<xs:element name="editora" type="xs:string" minOccurs="0"/>
+<xs:element name="estiloMusica" type="xs:string" minOccurs="0"/>
+<xs:element name="grupoMusico" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removerAssociado">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removerAssociadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirDisco">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="editora" type="xs:string" minOccurs="0"/>
+<xs:element name="grupo_musico" type="xs:string" minOccurs="0"/>
+<xs:element name="ano" type="xs:int"/>
+<xs:element name="estilo_musica" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirDiscoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pesquisaDiscoGrupoMusico">
+<xs:sequence>
+<xs:element name="grupo_musico" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pesquisaDiscoGrupoMusicoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:disco" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirAssociado">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="morada" type="xs:string" minOccurs="0"/>
+<xs:element name="telefone" type="xs:int"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="data_nascimento" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirAssociadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alugaDisco">
+<xs:sequence>
+<xs:element name="id_associado" type="xs:int"/>
+<xs:element name="id_disco" type="xs:int"/>
+<xs:element name="data_aluguer" type="xs:string" minOccurs="0"/>
+<xs:element name="data_max_devolucao" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alugaDiscoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolveDisco">
+<xs:sequence>
+<xs:element name="id_associado" type="xs:int"/>
+<xs:element name="id_disco" type="xs:int"/>
+<xs:element name="data_aluguer" type="xs:string" minOccurs="0"/>
+<xs:element name="data_devolucao" type="xs:string" minOccurs="0"/>
+<xs:element name="data_max_devolucao" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolveDiscoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removerDisco">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removerDiscoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pesquisaDiscoTitulo">
+<xs:sequence>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pesquisaDiscoTituloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:disco" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
