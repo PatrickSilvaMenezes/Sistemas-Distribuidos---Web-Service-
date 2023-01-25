@@ -12,7 +12,9 @@ O trabalho da disciplina de Sistemas Distribuídos sobre Web Services,
 consiste no desenvolvimento de um sistema de aluguel de discos, usando a
 tecnologia web service que permite a comunicação entre aplicações através
 do uso de protocolos de comunicação TCP/IP, fazendo uso de várias funções
-de software que garantem a comunicação entre as aplicações.
+de software que garantem a comunicação entre as aplicações,
+para este trabalho foi utilizado a API jdbc do JAVA que permitiu a execução de querys SQL, triggers
+e transações atômicas a base de dados do sistema de aluguel de discos.
 
 # OBJETIVO
 
