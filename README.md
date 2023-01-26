@@ -5,7 +5,7 @@
 
 #### Desenvolvido por: PATRICK SILVA MENEZES
 
-###### ========Ainda falta por as imagens===========
+
 # INTRODUÇÃO
 
 O trabalho da disciplina de Sistemas Distribuídos sobre Web Services,
@@ -33,16 +33,16 @@ Getters respectivos a cada atributo.
 ```
 ## 1.1. CLASSE ALUGUER
 
-
+![](images/classe_aluguer.png)
 ## 1.2. CLASSE ASSOCIADO
 
-
+![](images/classe_associado.png)
 ## 1.3. CLASSE DISCO
 
-
+![](images/classe_disco.png)
 ## 1.4. CLASSE HISTÓRICO
 
-
+![](images/classe_historico.png)
 ## 1.5. CLASSE WS_DB_GESTOR (CLASSE QUE IMPLEMENTA
 
 ### OS WEB METHODS)
@@ -57,6 +57,8 @@ explicados em seguida.
 
 ## 2.1. METODO INSERIR ASSOCIADO
 
+![](images/inserir_associado.png)
+
 Esse método permite inserir um associado na tabela associado da base de
 dados nostalgico, passando os WebParam correspondentes ao mesmo tipo de
 dados definidos na tabela associado, fazendo a conexão com o banco de
@@ -69,6 +71,8 @@ do método será retornado false.
 
 
 ## 2.2. METODO REMOVER ASSOCIADO
+
+![](images/remover_associado.png)
 
 Esse método permite remover um associado na tabela associado da base de
 dados nostalgico, passando o WebParam id do respectivo associado que se
@@ -86,6 +90,8 @@ caso não tenha afetado nenhuma linha é retornado false no catch do método.
 
 ## 2.3. METODO INSERIR DISCO
 
+![](images/inserir_disco.png)
+
 Esse método permite inserir um disco na tabela disco da base de dados
 nostalgico, passando os WebParam correspondentes ao mesmo tipo de dados
 definidos na tabela associado, fazendo a conexão com o banco de dados
@@ -98,6 +104,8 @@ do método será retornado false.
 
 
 ## 2.4. MÉTODO REMOVER DISCO
+
+![](images/remover_disco.png)
 
 Esse método permite remover um disco na tabela disco da base de dados
 nostalgico, passando o WebParam id do respectivo associado que se deseja
@@ -114,6 +122,8 @@ afetado nenhuma linha é retornado false no catch do método.
 
 
 ## 2.5. MÉTODO PESQUISA DISCO POR TÍTULO
+
+![](images/pesquisa_disco_titulo.png)
 
 Esse método permite pesquisar discos na tabela disco da base de dados
 nostalgico, passando o WebParam titulo do respectivo disco que se deseja
@@ -135,10 +145,9 @@ desejava acessar e setados no objeto disc criado antes do loop através dos
 Setters criados na classe Disco, por fim no ArrayList<Disco> discos é
 adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
 
-## 2.6. MÉTODO PESQUISA DISCO POR GRUPO
+## 2.6. MÉTODO PESQUISA DISCO POR GRUPO MUSICO
 
-## MUSICO
-
+![](images/pesquisa_disco_grupo.png)
 Esse método permite pesquisar discos na tabela disco da base de dados
 nostalgico, passando o WebParam grupo_musico dos respectivos discos
 que se deseja pesquisar, fazendo a conexão com o banco de dados através
@@ -159,9 +168,9 @@ desejava acessar e setados no objeto disc criado antes do loop através dos
 Setters criados na classe Disco, por fim no ArrayList<Disco> discos é
 adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
 
-## 2.7. MÉTODO PESQUISA DISCO POR ESTILO
+## 2.7. MÉTODO PESQUISA DISCO POR ESTILO MUSICA
 
-## MUSICA
+![](images/pesquisa_disco_estilo.png)
 
 Esse método permite pesquisar discos na tabela disco da base de dados
 nostalgico, passando o WebParam estilo_musica dos respectivos discos que
@@ -185,6 +194,8 @@ adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
 
 ## 2.8. MÉTODO ALUGA DISCO
 
+![](images/alugar_1.png)
+![](images/alugar_2.png)
 
 Esse método permite alugar discos na tabela disco da base de dados
 nostalgico, passando os WebParameters id_associado, id_disco,
@@ -213,6 +224,8 @@ definida na tabela aluguer e por fim é feito o commit.
 
 ## 2.9. MÉTODO DEVOLVE DISCO
   
+  ![](images/devolver_1.png)
+  ![](images/devolver_2.png)
 Esse método permite devolver discos alugados da tabela aluguer da base de
 dados nostalgico, passando os WebParameters id_associado, id_disco,
 data_aluguer, data_devolucao, data_max_devolucao, fazendo a conexão
@@ -249,6 +262,16 @@ multa aplicada e o valor calculado da mesma, e então é feito o commit.
 
 # 3. METODOLOGIA – CLIENTE
 
+## 3.1. MÉTODOS E MENU DE SELEÇÃO
+
+![](images/cliente_1.png)
+![](images/cliente_2.png)
+![](images/cliente_3.png)
+![](images/cliente_4.png)
+![](images/cliente_5.png)
+![](images/cliente_6.png)
+![](images/cliente_7.png)
+![](images/cliente_8.png)
 ```
 O cliente foi criado com a intenção de consumir os métodos criados no
 servidor de forma interativa através de um menu de seleção, onde para
@@ -256,15 +279,12 @@ cada opção são solicitados os dados do respectivo método invocado,
 sendo assim foi preciso apenas passar para a classe Cliente_trabalhoWS
 os métodos do Servidor através do diretório Web Service References.
 ```
-## 3.1. MÉTODOS E MENU DE SELEÇÃO
-
-
-
-
 ## 3.2. MENU DE SELEÇÃO – CLIENTE OUTPUT NETBEANS
 
+![](images/menu_cliente_cmd.png)
 ## 3.3 FORMULÁRIO WEB TESTER – BROWSER
 
+![](images/cliente_web_tester.png)
 
 # 4. CONCLUSÃO
 
