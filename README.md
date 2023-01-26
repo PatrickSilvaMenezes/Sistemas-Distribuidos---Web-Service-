@@ -130,43 +130,18 @@ nostalgico, passando o WebParam titulo do respectivo disco que se deseja
 pesquisar, fazendo a conexão com o banco de dados através da API java
 jdbc passando usuário e palavra-passe, esse método é do tipo
 ArrayList<Disco>, ou seja retorna um ArrayList que armazena objetos
-Disco. Sendo assim, primeiro cria-se o statement e em seguida é usado esse
-statement para fazer o executeQuery() que retorna um ResultSet o qual é
-armazenado na variável result, antes de percorrer result, é feito a
-eliminação de qualquer registro que possa ter ficado no ArrayList<Disco>
-discos após a execução da última instrução, o que foi notável na fase de
-testes, que após uma execução ficavam registros repetidos. Logo em
-seguida, é percorrido o ResultSet retornado em result ate o ultimo registro
-através da função next() dentro de um loop While, e os dados do disco
-eram obtidos por meio das funções get do respectivo tipo da coluna que se
-desejava acessar e setados no objeto disc criado antes do loop através dos
-
-
-Setters criados na classe Disco, por fim no ArrayList<Disco> discos é
-adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
+Disco. Sendo assim, primeiro cria-se o statement e em seguida é usado esse statement para fazer o executeQuery() que retorna um ResultSet o qual é armazenado na variável result, antes de percorrer result, é feito a eliminação de qualquer registro que possa ter ficado no ArrayList<Disco> discos após a execução da última instrução, o que foi notável na fase de testes, que após uma execução ficavam registros repetidos. Logo em seguida, é percorrido o ResultSet retornado em result ate o ultimo registro através da função next() dentro de um loop While, e os dados do disco eram obtidos por meio das funções get do respectivo tipo da coluna que se desejava acessar e setados no objeto disc criado antes do loop através dos Setters criados na classe Disco, por fim no ArrayList<Disco> discos é adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
 
 ## 2.6. MÉTODO PESQUISA DISCO POR GRUPO MUSICO
 
 ![](images/pesquisa_disco_grupo.png)
+
 Esse método permite pesquisar discos na tabela disco da base de dados
 nostalgico, passando o WebParam grupo_musico dos respectivos discos
 que se deseja pesquisar, fazendo a conexão com o banco de dados através
 da API java jdbc passando usuário e palavra-passe, esse método é do tipo
 ArrayList<Disco>, ou seja retorna um ArrayList que armazena objetos
-Disco. Sendo assim, primeiro cria-se o statement e em seguida é usado esse
-statement para fazer o executeQuery() que retorna um ResultSet o qual é
-armazenado na variável result, antes de percorrer result, é feito a
-eliminação de qualquer registro que possa ter ficado no ArrayList<Disco>
-discos após a execução da última instrução, o que foi notável na fase de
-testes, que após uma execução ficavam registros repetidos. Logo em
-seguida, é percorrido o ResultSet retornado em result ate o ultimo registro
-através da função next() dentro de um loop While, e os dados do disco
-eram obtidos por meio das funções get do respectivo tipo da coluna que se
-desejava acessar e setados no objeto disc criado antes do loop através dos
-
-
-Setters criados na classe Disco, por fim no ArrayList<Disco> discos é
-adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
+Disco. Sendo assim, primeiro cria-se o statement e em seguida é usado esse statement para fazer o executeQuery() que retorna um ResultSet o qual é armazenado na variável result, antes de percorrer result, é feito a eliminação de qualquer registro que possa ter ficado no ArrayList<Disco> discos após a execução da última instrução, o que foi notável na fase de testes, que após uma execução ficavam registros repetidos. Logo em seguida, é percorrido o ResultSet retornado em result ate o ultimo registro através da função next() dentro de um loop While, e os dados do disco eram obtidos por meio das funções get do respectivo tipo da coluna que se desejava acessar e setados no objeto disc criado antes do loop através dos Setters criados na classe Disco, por fim no ArrayList<Disco> discos é adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
 
 ## 2.7. MÉTODO PESQUISA DISCO POR ESTILO MUSICA
 
@@ -177,20 +152,7 @@ nostalgico, passando o WebParam estilo_musica dos respectivos discos que
 se deseja pesquisar, fazendo a conexão com o banco de dados através da
 API java jdbc passando usuário e palavra-passe, esse método é do tipo
 ArrayList<Disco>, ou seja retorna um ArrayList que armazena objetos
-Disco. Sendo assim, primeiro cria-se o statement e em seguida é usado esse
-statement para fazer o executeQuery() que retorna um ResultSet o qual é
-armazenado na variável result, antes de percorrer result, é feito a
-eliminação de qualquer registro que possa ter ficado no ArrayList<Disco>
-discos após a execução da última instrução, o que foi notável na fase de
-testes, que após uma execução ficavam registros repetidos. Logo em
-seguida, é percorrido o ResultSet retornado em result ate o ultimo registro
-através da função next() dentro de um loop While, e os dados do disco
-
-
-eram obtidos por meio das funções get do respectivo tipo da coluna que se
-desejava acessar e setados no objeto disc criado antes do loop através dos
-Setters criados na classe Disco, por fim no ArrayList<Disco> discos é
-adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
+Disco. Sendo assim, primeiro cria-se o statement e em seguida é usado esse statement para fazer o executeQuery() que retorna um ResultSet o qual é armazenado na variável result, antes de percorrer result, é feito a eliminação de qualquer registro que possa ter ficado no ArrayList<Disco> discos após a execução da última instrução, o que foi notável na fase de testes, que após uma execução ficavam registros repetidos. Logo em seguida, é percorrido o ResultSet retornado em result ate o ultimo registro através da função next() dentro de um loop While, e os dados do disco eram obtidos por meio das funções get do respectivo tipo da coluna que se desejava acessar e setados no objeto disc criado antes do loop através dos Setters criados na classe Disco, por fim no ArrayList<Disco> discos é adicionado o objeto disc e por fim retornado o ArrayList<Disco> discos.
 
 ## 2.8. MÉTODO ALUGA DISCO
 
@@ -203,51 +165,21 @@ data_aluguer, data_max_devolucao, fazendo a conexão com o banco de
 dados através da API java jdbc passando usuário e palavra-passe.
 Primeiramente, o auto commit é desabilitado porque somente quando as duas
 transações atomicas acontecerem que deve ser feito o commit da instrução,
-que são a de inserção na tabela aluguer e de criação do trigger alugaDisco
-que deleta o disco alugado da tabela disco, depois do mesmo ter sido inserido
-na tabela aluguer. Segundamente, para esse método, usei o
-PreparedStatement no qual os Values da instrução insert são passados por
-meio de Setters de acordo com cada tipo de dado das colunas da tabela
-aluguer, os 2 parâmetros data_aluguer e data_max_devolucao precisaram
-ser convertidos para o tipo Date pois são recebidos no tipo String. Para isso
-(como exemplo usarei o parametro data_max_devolucao), foi declaradq
-uma variável dateDevolucao do tipo java.util.Date e inicializada com valor
-null, logo em seguida é feito o parsing da string data_max_devolucao em um
-objeto do tipo Date, usando o formato de data definido pelo objeto sdf do
-tipo SimpleDateFormat, caso corra bem, é transformado a string em um
-objeto do tipo Date, caso corra mal é feito o disparo de um ParseException,
-após isso é criado um objeto sqlDateDevolucao do tipo java.sql.Date usando
-como parametro o tempo em milisegundos do objeto dateDevolucao e então
-é setado o objeto sqlDateDevolucao correspondendo ao tipo da coluna
-definida na tabela aluguer e por fim é feito o commit.
+que são a de inserção na tabela aluguer e de criação do trigger alugaDisco que deleta o disco alugado da tabela disco, depois do mesmo ter sido inserido na tabela aluguer. Segundamente, para esse método, usei o PreparedStatement no qual os Values da instrução insert são passados por meio de Setters de acordo com cada tipo de dado das colunas da tabela aluguer, os 2 parâmetros data_aluguer e data_max_devolucao precisaram ser convertidos para o tipo Date pois são recebidos no tipo String. Para isso (como exemplo usarei o parametro data_max_devolucao), foi declarada uma variável dateDevolucao do tipo java.util.Date e inicializada com valor null, logo em seguida é feito o parsing da string data_max_devolucao em um objeto do tipo Date, usando o formato de data definido pelo objeto sdf do tipo SimpleDateFormat, caso corra bem, é transformado a string em um objeto do tipo Date, caso corra mal é feito o disparo de um ParseException, após isso é criado um objeto sqlDateDevolucao do tipo java.sql.Date usando como parametro o tempo em milisegundos do objeto dateDevolucao e então é setado o objeto sqlDateDevolucao correspondendo ao tipo da coluna definida na tabela aluguer e por fim é feito o commit.
 
 
 ## 2.9. MÉTODO DEVOLVE DISCO
   
   ![](images/devolver_1.png)
   ![](images/devolver_2.png)
+  
 Esse método permite devolver discos alugados da tabela aluguer da base de
 dados nostalgico, passando os WebParameters id_associado, id_disco,
 data_aluguer, data_devolucao, data_max_devolucao, fazendo a conexão
 com o banco de dados através da API java jdbc passando usuário e palavra-
 passe. Primeiramente, o auto commit é desabilitado porque somente quando
 as duas transações atomicas acontecerem que deve ser feito o commit da
-instrução, que são a de inserção na tabela historico e de criação do trigger
-devolveDisco que deleta o disco alugado da tabela alguer, depois do mesmo
-
-
-ter sido inserido na tabela historico. Segundamente, para esse método, usei
-o PreparedStatement no qual os Values da instrução insert são passados por
-meio de Setters de acordo com cada tipo de dado das colunas da tabela
-aluguer, os 2 parâmetros data_aluguer e data_devolucao precisaram ser
-convertidos para o tipo Date pois são recebidos no tipo String. Para isso
-(como exemplo usarei o parametro data_devolucao), foi declarada uma
-variável dateDevolucao do tipo java.util.Date e inicializada com valor null,
-logo em seguida é feito o parsing da string data_devolucao em um objeto do
-tipo Date, usando o formato de data definido pelo objeto sdf do tipo
-SimpleDateFormat, caso corra bem, é transformado a string em um objeto
-do tipo Date, caso corra mal é feito o disparo de um ParseException, após
-isso é criado um objeto sqlDateDevolucao do tipo java.sql.Date usando como
+instrução, que são a de inserção na tabela historico e de criação do trigger devolveDisco que deleta o disco alugado da tabela alguer, depois do mesmo ter sido inserido na tabela historico. Segundamente, para esse método, usei o PreparedStatement no qual os Values da instrução insert são passados por meio de Setters de acordo com cada tipo de dado das colunas da tabela aluguer, os 2 parâmetros data_aluguer e data_devolucao precisaram ser convertidos para o tipo Date pois são recebidos no tipo String. Para isso (como exemplo usarei o parametro data_devolucao), foi declarada uma variável dateDevolucao do tipo java.util.Date e inicializada com valor null, logo em seguida é feito o parsing da string data_devolucao em um objeto do tipo Date, usando o formato de data definido pelo objeto sdf do tipo SimpleDateFormat, caso corra bem, é transformado a string em um objeto do tipo Date, caso corra mal é feito o disparo de um ParseException, após isso é criado um objeto sqlDateDevolucao do tipo java.sql.Date usando como
 parametro o tempo em milisegundos do objeto dateDevolucao e então é
 setado o objeto sqlDateDevolucao correspondendo ao tipo da coluna
 definida na tabela historico, e antes de ser feito o commit é feito o cálculo
