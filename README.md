@@ -13,16 +13,13 @@ O trabalho da disciplina de Sistemas Distribuídos sobre Web Services,
 consiste no desenvolvimento de um sistema de aluguel de discos, usando a
 tecnologia web service que permite a comunicação entre aplicações através
 do uso de protocolos de comunicação TCP/IP, fazendo uso de várias funções
-de software que garantem a comunicação entre as aplicações,
-para este trabalho foi utilizado a API jdbc do JAVA que permitiu a execução de querys SQL, triggers
-e transações atômicas a base de dados do sistema de aluguel de discos.
+de software que garantem a comunicação entre as aplicações, para este trabalho foi utilizado a API jdbc do JAVA que permitiu a execução de querys SQL, triggers e transações atômicas a base de dados do sistema de aluguel de discos.
 ```
 # OBJETIVO
 
 ```
 Considere o sistema descrito e desenvolva uma plataforma de Web Services,
-baseados em SOAP, capaz de permitir a interação com o sistema
-apresentado. Implemente, igualmente, um cliente capaz de consumir as
+baseados em SOAP, capaz de permitir a interação com o sistema apresentado. Implemente, igualmente, um cliente capaz de consumir as
 operações da sua plataforma de web services.
 ```
 # METODOLOGIA – SERVIDOR
@@ -30,8 +27,7 @@ operações da sua plataforma de web services.
 # 1. CLASSES CRIADAS
 
 ```
-Para cada classe criada foram definidos os atributos e métodos Setters e
-Getters respectivos a cada atributo.
+Para cada classe criada foram definidos os atributos e métodos Setters e Getters respectivos a cada atributo.
 ```
 ## 1.1. CLASSE ALUGUER
 
@@ -109,11 +105,7 @@ passando usuário e palavra-passe, logo em seguida é criado um Statement
 (interface utilizada para executar querys SQL ou MySQL), o qual executa a
 query definida de remoção através da função executeUpdate(), que nesse
 caso não retorna nenhum valor boleano, mas sim a quantidade de registros
-que são afetados pela execução da query definida, a lógica é parecida com a
-de inserir porém agora o que se leva em consideração é a quantidade de
-linhas afetadas, que nesse caso de remoção apenas 1 linha deve ser afetada,
-caso seja 1 o retorno em rowsaffected, é retornado true, caso não tenha
-afetado nenhuma linha é retornado false no catch do método.
+que são afetados pela execução da query definida, a lógica é parecida com a de inserir porém agora o que se leva em consideração é a quantidade de linhas afetadas, que nesse caso de remoção apenas 1 linha deve ser afetada, caso seja 1 o retorno em rowsaffected, é retornado true, caso não tenha afetado nenhuma linha é retornado false no catch do método.
 ```
 
 ## 2.5. MÉTODO PESQUISA DISCO POR TÍTULO
@@ -179,17 +171,7 @@ data_aluguer, data_devolucao, data_max_devolucao, fazendo a conexão
 com o banco de dados através da API java jdbc passando usuário e palavra-
 passe. Primeiramente, o auto commit é desabilitado porque somente quando
 as duas transações atomicas acontecerem que deve ser feito o commit da
-instrução, que são a de inserção na tabela historico e de criação do trigger devolveDisco que deleta o disco alugado da tabela alguer, depois do mesmo ter sido inserido na tabela historico. Segundamente, para esse método, usei o PreparedStatement no qual os Values da instrução insert são passados por meio de Setters de acordo com cada tipo de dado das colunas da tabela aluguer, os 2 parâmetros data_aluguer e data_devolucao precisaram ser convertidos para o tipo Date pois são recebidos no tipo String. Para isso (como exemplo usarei o parametro data_devolucao), foi declarada uma variável dateDevolucao do tipo java.util.Date e inicializada com valor null, logo em seguida é feito o parsing da string data_devolucao em um objeto do tipo Date, usando o formato de data definido pelo objeto sdf do tipo SimpleDateFormat, caso corra bem, é transformado a string em um objeto do tipo Date, caso corra mal é feito o disparo de um ParseException, após isso é criado um objeto sqlDateDevolucao do tipo java.sql.Date usando como
-parametro o tempo em milisegundos do objeto dateDevolucao e então é
-setado o objeto sqlDateDevolucao correspondendo ao tipo da coluna
-definida na tabela historico, e antes de ser feito o commit é feito o cálculo
-do valor da multa pela diferença entre data_devolucao e
-data_max_devolucao dessa forma é possível obter a multa que deverá ser
-aplicada ao associado caso haja atraso na devolucao do disco e como a taxa
-é de 1€ basta fazer a diferença de dias entre as datas caso seja maior que 0 é
-mostrado o valor calculado da multa caso não apenas uma mensagem para
-informar ao associado que o disco foi devolvido com sucesso mas com uma
-multa aplicada e o valor calculado da mesma, e então é feito o commit.
+instrução, que são a de inserção na tabela historico e de criação do trigger devolveDisco que deleta o disco alugado da tabela alguer, depois do mesmo ter sido inserido na tabela historico. Segundamente, para esse método, usei o PreparedStatement no qual os Values da instrução insert são passados por meio de Setters de acordo com cada tipo de dado das colunas da tabela aluguer, os 2 parâmetros data_aluguer e data_devolucao precisaram ser convertidos para o tipo Date pois são recebidos no tipo String. Para isso (como exemplo usarei o parametro data_devolucao), foi declarada uma variável dateDevolucao do tipo java.util.Date e inicializada com valor null, logo em seguida é feito o parsing da string data_devolucao em um objeto do tipo Date, usando o formato de data definido pelo objeto sdf do tipo SimpleDateFormat, caso corra bem, é transformado a string em um objeto do tipo Date, caso corra mal é feito o disparo de um ParseException, após isso é criado um objeto sqlDateDevolucao do tipo java.sql.Date usando como parametro o tempo em milisegundos do objeto dateDevolucao e então é setado o objeto sqlDateDevolucao correspondendo ao tipo da coluna definida na tabela historico, e antes de ser feito o commit é feito o cálculo do valor da multa pela diferença entre data_devolucao e data_max_devolucao dessa forma é possível obter a multa que deverá ser aplicada ao associado caso haja atraso na devolucao do disco e como a taxa é de 1€ basta fazer a diferença de dias entre as datas caso seja maior que 0 é mostrado o valor calculado da multa caso não apenas uma mensagem para informar ao associado que o disco foi devolvido com sucesso mas com uma multa aplicada e o valor calculado da mesma, e então é feito o commit.
 ```
 
 # 3. METODOLOGIA – CLIENTE
